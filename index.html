@@ -1,1 +1,60 @@
-Hello World
+<html>
+    <head>
+    <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <script>
+        function markdown2html() {
+            let converter = new showdown.Converter();
+            let hiddenFrame = document.getElementById("mdFrame");
+            let strRawContents = document.getElementById("mdFrame").childNodes[0].textContent;
+            strRawContents = strRawContents.replace("[my_mail]", "[![mail](./img/email.png =24x24)]" + "(mailto:" + "eugene" + ".kharitonov" + "@" + "gmail" + ".com)");
+            html      = converter.makeHtml(strRawContents);
+            document.open();
+            document.write(html);
+            document.close();
+        }
+    </script>
+    </head>
+<body>
+
+<iframe id="mdFrame" style="display: none;">
+# Eugene Kharitonov
+
+![photo](img/photo.png =200x*)
+
+[![github](img/github.svg =24x24)](https://github.com/eugene-kharitonov/)
+[![G Scholar](img/googlescholar.svg =24x24)](https://scholar.google.com/citations?user=8PE1wjQAAAAJ&hl=en)
+[![Twitter](img/twitter.svg =24x24)](https://twitter.com/n0mad_0)
+[my_mail]
+
+
+Hi there! I am working at FB AI Research Paris, where I am trying to find a balance between Research and Engineering. I have overly diverse interests, but most of all I am excited about understanding the internal workings of deep learning models. What sets them apart? What implicit priors guide their learning? How are they different or similar from humans and other species? Taking inspiration from my background in physics, I look for experimental ways of answering these questions.
+
+I also work(ed) on other topics, such as speech recognition, federated learning, search engine evaluation, and information retrieval. 
+
+## Sample of my current interests
+(full list of [publications](https://scholar.google.com/citations?user=8PE1wjQAAAAJ&hl=en))
+
+ * _Compositionality and Generalization in Emergent Languages_. Rahma Chaabouni, Eugene Kharitonov, Diane Bouchacourt, Emmanuel Dupoux, Marco Baroni. [[arxiv]](https://arxiv.org/abs/2004.09124)
+ * _Entropy Minimization In Emergent Languages_. Eugene Kharitonov, Rahma Chaabouni, Diane Bouchacourt, Marco Baroni. [[arxiv]](https://arxiv.org/abs/1905.13687) [[2 min summary @ BAICS workshop ICLR 2020]](https://baicsworkshop.github.io/program/baics_0.html)
+ * EGG: a platform for doing research in Language Emergence. [[github]](https://github.com/facebookresearch/EGG) [[2 min screencast]](https://vimeo.com/345470060)
+
+
+## Other notable things
+ * _Learning Sensitive Combinations of A/B Test Metrics_. Eugene Kharitonov, Alexey Drutsa, Pavel Serdyukov. [[dl.acm]](https://dl.acm.org/doi/abs/10.1145/3018661.3018708)
+ * octopi: Character-level language models + arithmetic coding = compression &#9829; [[github]](https://github.com/n0mad/octopi)
+
+
+## Education
+ * PhD in CS, University of Glasgow, 2016
+ * MSc Applied Math &amp; Physics, Moscow Institute of Physics and Technology (MIPT), 2009
+ * Yandex School of Data Analysis, 2009
+
+</iframe>
+
+<script type="text/javascript">
+    markdown2html();
+</script>
+
+</body>
+
+</html>
